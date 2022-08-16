@@ -1,0 +1,12 @@
+{
+  "name": "lista-de-presenca-react",
+  "version": "1.0.0",
+  "description": "Lista de presença feita em React",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
