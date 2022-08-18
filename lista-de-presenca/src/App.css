@@ -15,6 +15,27 @@ body{
   width: 100%;
 }
 
+header{
+  display: flex;
+  width: 100%;
+  gap: 50px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+header div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+img{
+  max-width: 70px;
+  border-radius: 100px;
+}
+
 input{
   background-color: rgba(215, 215, 215, 0.71);
   height: 30px;

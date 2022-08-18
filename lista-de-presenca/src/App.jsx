@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import { useEffect } from 'react';
 import './App.css'
 import {Card} from './components/cards/cards'
 
@@ -6,6 +7,7 @@ export function App(){
 
   const [studentName, setStudentName] = useState('');
   const [students, setStudents] = useState([]);
+  const [user, setUser] = useState({name: '', avatar: ''});
   
   function handleAddStudent(){
     const newStudent = {
@@ -18,10 +20,28 @@ export function App(){
     setStudents(prevState => [...prevState, newStudent]);
   }
 
+  useEffect(() => {
+    fetch('https://api.github.com/users/jmgrd98')
+    .then(response => response.json())
+    .then(data => {
+      setUser({
+        name: data.name,
+        avatar: data.avatar_url
+      });
+    })
+    .catch(console.error("Erro!"))
+  }, [])
+
   return (
     <div className="App">
       <body>
-        <h1>Lista de presença</h1>
+        <header>
+          <h1>Lista de presença</h1>
+          <div>
+            <strong>{user.name}</strong>
+          <img src={user.avatar} alt="Avatar Github" />
+          </div>
+        </header>
         <input type="text" placeholder="Insira o nome aqui" onChange={e => setStudentName(e.target.value)}/>
         <button type="submit" onClick={handleAddStudent}>Adicionar</button>
 
