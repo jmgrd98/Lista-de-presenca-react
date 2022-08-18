@@ -15,18 +15,18 @@ export function App(){
         minute: '2-digit',
         second: '2-digit'})
     }
-    setStudents([newStudent]);
+    setStudents(prevState => [...prevState, newStudent]);
   }
 
   return (
     <div className="App">
       <body>
         <h1>Lista de presença</h1>
-        <input type="text" onChange={e => setStudentName(e.target.value)}/>
+        <input type="text" placeholder="Insira o nome aqui" onChange={e => setStudentName(e.target.value)}/>
         <button type="submit" onClick={handleAddStudent}>Adicionar</button>
 
         {
-          students.map(student => <Card name={student.name} time={student.time} />)
+          students.map(student => <Card key={student.time} name={student.name} time={student.time} />)
         }
       </body>
     </div>
