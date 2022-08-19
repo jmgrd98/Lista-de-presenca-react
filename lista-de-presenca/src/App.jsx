@@ -21,7 +21,7 @@ export function App(){
   }
 
   useEffect(() => {
-    fetch('https://api.github.com/users/jmgrd98')
+    fetch(`https://api.github.com/users/jmgrd98`)
     .then(response => response.json())
     .then(data => {
       setUser({
