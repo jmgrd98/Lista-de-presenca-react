@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import './App.css'
 import {Card} from './components/cards/cards'
 
-export function App(){
+export default function App(){
 
   const [studentName, setStudentName] = useState('');
   const [students, setStudents] = useState([]);
@@ -52,5 +52,3 @@ export function App(){
     </div>
   );
 }
-
-export default App;
